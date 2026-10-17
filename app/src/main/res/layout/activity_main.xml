@@ -33,6 +33,17 @@
             app:tint="#1B1B1F" />
     </FrameLayout>
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="24dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/foto_doctor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnBell"
+        app:shapeAppearanceOverlay="@style/CircleImage" />
+
     <ImageView
         android:id="@+id/imgDoctor"
         android:layout_width="0dp"
@@ -55,7 +66,37 @@
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnBell" />
+        app:layout_constraintTop_toBottomOf="@id/imgAvatar" />
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="How is it going today?"
+        android:textColor="#8A8A99"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/tvWelcome"
+        app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUrgent"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:text="Urgent Care"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:backgroundTint="#FF9F2E"
+        app:cornerRadius="26dp"
+        app:icon="@drawable/ic_alarm"
+        app:iconPadding="10dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="@id/tvWelcome"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
 
     <LinearLayout
         android:id="@+id/cardBody"
@@ -188,6 +229,135 @@
                 android:textSize="15sp"
                 android:textStyle="bold" />
         </RelativeLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Línea azul de la izquierda -->
+                <View
+                    android:id="@+id/lineBlue"
+                    android:layout_width="4dp"
+                    android:layout_height="0dp"
+                    android:background="#2F6BFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvDateLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="14dp"
+                    android:text="Appointment date"
+                    android:textColor="#8A8A99"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toEndOf="@id/lineBlue"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/btnMore"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/ic_more_vert"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvDateLabel"
+                    app:tint="#8A8A99" />
+
+                <ImageView
+                    android:id="@+id/imgClock"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_schedule"
+                    app:layout_constraintStart_toStartOf="@id/tvDateLabel"
+                    app:layout_constraintTop_toBottomOf="@id/tvDateLabel"
+                    app:tint="#1B1B1F" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Wed Nov 20  •  8:00 - 8:30 AM"
+                    android:textColor="#1B1B1F"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/imgClock"
+                    app:layout_constraintStart_toEndOf="@id/imgClock"
+                    app:layout_constraintTop_toTopOf="@id/imgClock" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#EEEEF2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tvDateLabel"
+                    app:layout_constraintTop_toBottomOf="@id/imgClock" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imgDoctor2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="14dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/foto_doctor"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tvDateLabel"
+                    app:layout_constraintTop_toBottomOf="@id/divider"
+                    app:shapeAppearanceOverlay="@style/CircleImage" />
+
+                <!-- Insignia verde de videollamada -->
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:background="@drawable/bg_circle_white"
+                    android:backgroundTint="#2DBE60"
+                    android:padding="3dp"
+                    android:src="@drawable/ic_videocam"
+                    app:layout_constraintBottom_toBottomOf="@id/imgDoctor2"
+                    app:layout_constraintEnd_toEndOf="@id/imgDoctor2"
+                    app:tint="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tvDoctorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Dr. Prem Tiwari"
+                    android:textColor="#1B1B1F"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/imgDoctor2"
+                    app:layout_constraintTop_toTopOf="@id/imgDoctor2" />
+
+                <TextView
+                    android:id="@+id/tvSpecialty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Orthopedic"
+                    android:textColor="#8A8A99"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/tvDoctorName"
+                    app:layout_constraintTop_toBottomOf="@id/tvDoctorName" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 
