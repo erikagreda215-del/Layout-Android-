@@ -27,12 +27,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.btnBell).setOnClickListener(v -> toast("Notificaciones"));
-        findViewById(R.id.btnUrgent).setOnClickListener(v -> toast("Urgent Care"));
         findViewById(R.id.svcConsultation).setOnClickListener(v -> toast("Consultation"));
         findViewById(R.id.svcMedicines).setOnClickListener(v -> toast("Medicines"));
         findViewById(R.id.svcAmbulance).setOnClickListener(v -> toast("Ambulance"));
         findViewById(R.id.tvSeeAll).setOnClickListener(v -> toast("See All"));
-        findViewById(R.id.btnMore).setOnClickListener(v -> toast("Más opciones"));
         findViewById(R.id.navAdd).setOnClickListener(v -> toast("Nueva cita"));
     }
 
