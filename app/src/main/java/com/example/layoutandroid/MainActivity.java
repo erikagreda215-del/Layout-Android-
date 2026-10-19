@@ -1,4 +1,4 @@
-package com.example.layoutandroid; // <-- cambia por tu package
+package com.example.layoutandroid;
 
 import android.os.Bundle;
 import android.view.View;
